@@ -1,0 +1,23 @@
+#setBackground{
+    background-image: url("../images/nit.jpg");
+    float: top;
+    height: 200px;
+    width :100%;
+}
+.butt{
+    margin-left: 40%;
+    background-color: #4CAF50;
+    color:white;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    font-size: 24px;
+    border: none;
+    border-radius: 12px;
+    font-family:"../fonts/Futura_Light_font.ttf";
+}
+.butt:hover {background-color: #3e8e41}
+.butt:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
