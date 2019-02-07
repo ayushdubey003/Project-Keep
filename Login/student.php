@@ -44,6 +44,7 @@
     </body>
 </html>
 <?php
+    session_start();
     require "../Schema/dbconnect.php";
     if(isset($_POST['submit']))
     {
@@ -52,8 +53,23 @@
         if(empty($username)||empty($password)){
             echo "<script type='text/javascript'>
                 alert('Invalid Credentials');
-            </script>";
+                </script>";
             die();
+        }
+        else{
+            $sql = "SELECT * FROM student WHERE username='$username' AND password='$password'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result)==0)
+            {
+                echo "<script type='text/javascript'>
+                    alert('Invalid Credentials');
+                    </script>";
+                die();
+            }
+            else
+            {
+                $_SESSION['username']=$username;
+            }
         }
     }
 ?>

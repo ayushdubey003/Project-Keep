@@ -21,7 +21,6 @@
     <div class="container">
       <a href="Login/student.php"><button class="butt">Login as Student&nbsp;&nbsp;&nbsp</button></a><br><br>
       <a href="Login/professor.php"><button class="butt">Login as Professor</button></a><br><br>
-      <a href="Login/admin.php"><button class="butt">Login as Admin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a><br><br>
     </div>
   </section>
 </body>

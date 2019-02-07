@@ -44,6 +44,7 @@
     </body>
 </html>
 <?php
+    session_start();
     if(isset($_POST['submit']))
     {
         $username=$_POST['username'];
@@ -51,7 +52,19 @@
         if(empty($username)||empty($password)){
             echo "<script type='text/javascript'>
                 alert('Invalid Credentials');
-            </script>";
+                </script>";
+            die();
+        }
+        if($username=="admin"&&$password=="1234")
+        {
+            $_SESSION["admin"]="admin";
+            $registration="registration.php";
+            header("Location: $registration");
+        }
+        else{
+            echo "<script type='text/javascript'>
+                alert('Invalid Credentials');
+                </script>";
             die();
         }
     }
