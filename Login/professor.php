@@ -44,6 +44,7 @@
     </body>
 </html>
 <?php
+    require "../Schema/dbconnect.php";
     if(isset($_POST['submit']))
     {
         $username=$_POST['username'];
