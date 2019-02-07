@@ -1,6 +1,6 @@
 <?php
   require "header.html";
-  
+  require "Schema/createdb.php";
 ?>
 <html lang="en">
 <head>
