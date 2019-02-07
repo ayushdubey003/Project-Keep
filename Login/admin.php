@@ -1,5 +1,5 @@
 <?php
-    require "../header.html";
+    require ("../header.html");
 ?>
 <html>
     <head></head>
@@ -37,9 +37,22 @@
         <div class="container" style="height:400px; width:300px;float: centre; margin-top: 100px; background-color:white ">
             <form action="admin.php" method= "POST">
                 Username:<br><input type="text" name="username" class="inp"><br>
-                Password:<br><input type="password" name="username" class="inp"><br><br>
-                <input type="submit" value="Submit" name="submit" align:centre class="submit"><br>
+                Password:<br><input type="password" name="password" class="inp"><br><br>
+                <input type="submit" value="Log in" name="submit" align:centre class="submit"><br>
             </form>
         </div>
     </body>
 </html>
+<?php
+    if(isset($_POST['submit']))
+    {
+        $username=$_POST['username'];
+        $password=$_POST['password'];
+        if(empty($username)||empty($password)){
+            echo "<script type='text/javascript'>
+                alert('Invalid Credentials');
+            </script>";
+            die();
+        }
+    }
+?>
