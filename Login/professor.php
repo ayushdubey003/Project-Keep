@@ -1,5 +1,6 @@
 <?php
     require "../header.html";
+    $_SESSION['admin']="something else";
 ?>
 <html>
     <head></head>
@@ -44,6 +45,8 @@
     </body>
 </html>
 <?php
+    session_start();
+    $_SESSION['professor']="something else";
     require "../Schema/dbconnect.php";
     if(isset($_POST['submit']))
     {
@@ -52,8 +55,25 @@
         if(empty($username)||empty($password)){
             echo "<script type='text/javascript'>
                 alert('Invalid Credentials');
-            </script>";
+                </script>";
             die();
+        }
+        else{
+            $enc_pass=md5($password);
+            $sql = "SELECT * FROM professor WHERE username='$username' AND password='$enc_pass'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result)==0)
+            {
+                echo "<script type='text/javascript'>
+                    alert('Invalid Credentials');
+                    </script>";
+                die();
+            }
+            else
+            {
+                $_SESSION['professor']=$username;
+                echo "Ok";
+            }
         }
     }
 ?>

@@ -1,6 +1,7 @@
 <?php
   require "header.html";
   require "Schema/createdb.php";
+  $_SESSION['admin']="something else";
 ?>
 <html lang="en">
 <head>

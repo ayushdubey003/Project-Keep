@@ -1,5 +1,6 @@
 <?php
     require "../header.html";
+    $_SESSION['admin']="something else";
 ?>
 <html>
     <head></head>
@@ -45,6 +46,7 @@
 </html>
 <?php
     session_start();
+    $_SESSION['student']="something else";
     require "../Schema/dbconnect.php";
     if(isset($_POST['submit']))
     {
@@ -57,7 +59,8 @@
             die();
         }
         else{
-            $sql = "SELECT * FROM student WHERE username='$username' AND password='$password'";
+            $enc_pass=md5($password);
+            $sql = "SELECT * FROM student WHERE username='$username' AND password='$enc_pass'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result)==0)
             {
@@ -68,7 +71,7 @@
             }
             else
             {
-                $_SESSION['username']=$username;
+                $_SESSION['student']=$username;
             }
         }
     }
