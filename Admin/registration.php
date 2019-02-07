@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(@$_SESSION['admin']!="admin")
-        die("You have been logged out");
+        die("You 're not allowed to access this page");
     require '../header.html';
 ?>
 <html>

@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $_SESSION["admin"]="somethingelse";
     require ("../header.html");
 ?>
 <html>
@@ -44,7 +46,8 @@
     </body>
 </html>
 <?php
-    session_start();
+    @session_start();
+    $_SESSION["admin"]="somethingelse";
     if(isset($_POST['submit']))
     {
         $username=$_POST['username'];
