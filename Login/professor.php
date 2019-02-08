@@ -72,6 +72,7 @@
             else
             {
                 $_SESSION['professor']=$username;
+                header("Location: profHome.php");
             }
         }
     }
