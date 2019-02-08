@@ -107,19 +107,22 @@
             </script>";
             die();
         }
-        $sql="INSERT INTO professor (username,password,firstname,lastname,coursecode)
-        VALUES('$username','$encpassword','$firstname','$lastname','$coursecode')";
-        mysqli_query($conn, $sql);
         $subject="Do not Reply";
         $text="Dear User,\nYour username is $username and password is $password. Please use it to Login in the future";
         $headers="From: ayushdubey957@gmx.com";
         if(mail($username,$subject,$text,$headers)){
-            echo "<script type='text/javascript'>
-            alert('Mail Sent');
-            </script>";
-            die(); 
+            //do nothing
         }
         else
-            echo "Error sending mail";
+        {
+            echo "<script type='text/javascript'>
+            alert('Error sending mail');
+            </script>";
+            die();
+        }
+        $sql="INSERT INTO professor (username,password,firstname,lastname,coursecode)
+        VALUES('$username','$encpassword','$firstname','$lastname','$coursecode')";
+        mysqli_query($conn, $sql);
+        header("Location: registration.php");
     }
 ?>
