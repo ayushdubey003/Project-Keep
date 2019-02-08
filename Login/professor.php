@@ -72,7 +72,6 @@
             else
             {
                 $_SESSION['professor']=$username;
-                echo "Ok";
             }
         }
     }
