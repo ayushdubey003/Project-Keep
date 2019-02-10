@@ -30,8 +30,8 @@
     </style>
     <body>
         <div class="container" style="height:400px;width:300px;">
-            <a href="giveproject.php"><button class="butt">View Pending Projects</button></a>
-            <a href="reviewproject.php"><button class="butt">View Submitted Projects</button></a>
+            <a href="viewpending.php"><button class="butt">View Pending Projects</button></a>
+            <a href="viewsubmitted.php"><button class="butt">View Submitted Projects</button></a>
             <a href="logoutStudent.php"><button class="butt">Logout</button></a>
         </div>
     </body>
