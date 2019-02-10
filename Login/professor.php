@@ -45,6 +45,7 @@
 </html>
 <?php
     session_start();
+    unset($_SESSION['professor']);
     require "../Schema/dbconnect.php";
     if(!isset($_SESSION['professor'])){
         if(isset($_POST['submit']))

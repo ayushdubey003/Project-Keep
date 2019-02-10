@@ -16,6 +16,8 @@
         <title>Welcome Page</title>
         <p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'" >Welcome '.$firstname.' '.$lastname.'</p>';
     }
+    else
+        die("You are not allowed to access this page");
 ?>
 <html>
     <style>
@@ -30,7 +32,7 @@
         <div class="container" style="height:400px;width:280px;">
             <a href="giveproject.php"><button class="butt">Give Project</button></a>
             <a href="reviewproject.php"><button class="butt">Previous Projects</button></a>
-            <a href="logout.php"><button class="butt">Logout</button></a>
+            <a href="logoutProfessor.php"><button class="butt">Logout</button></a>
         </div>
     </body>
 </html>

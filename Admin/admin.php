@@ -46,6 +46,7 @@
 </html>
 <?php
     @session_start();
+    unset($_SESSION['admin']);
     if(!isset($_SESSION['admin'])){
         if(isset($_POST['submit']))
         {
@@ -55,6 +56,7 @@
                 echo "<script type='text/javascript'>
                     alert('Invalid Credentials');
                     </script>";
+                header("Location: logout.php");
                 die();
             }
             if($username=="admin"&&$password=="1234")
