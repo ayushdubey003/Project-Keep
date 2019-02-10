@@ -72,7 +72,7 @@
                 else
                 {
                     $_SESSION['student']=$username;
-                    echo "Ok";
+                    header("Location: studHome.php");
                 }
             }
         }

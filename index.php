@@ -1,7 +1,10 @@
 <?php
   require "header.html";
   require "Schema/createdb.php";
-  $_SESSION['admin']="something else";
+  require "Schema/professor_projects.php";
+  require "Schema/professor.php";
+  require "Schema/student_submissions.php";
+  require "Schema/student.php";
 ?>
 <html lang="en">
 <head>

@@ -10,7 +10,8 @@
     }
     $query="CREATE TABLE submission (username VARCHAR(30) NOT NULL,
     submission MEDIUMBLOB NOT NULL,
-    uid VARCHAR(100))";
+    uid VARCHAR(100),
+    submitted INTEGER DEFAULT 0)";
     mysqli_query($conn,$query);
     mysqli_close($conn);
 ?>
