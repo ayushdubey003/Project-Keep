@@ -75,10 +75,9 @@
         $coursecode=$row['coursecode'];
         $query="INSERT INTO project (username,title,description,coursecode,deadline)
             VALUES('$username','$title','$description','$coursecode','$ts')";
+        $uid=$coursecode+$title;
         if(mysqli_query($conn,$query))
-        {
             header("Location: profHome.php");
-        }
         else
             echo "<script type=text/javascript>
             Error connecting to database    
