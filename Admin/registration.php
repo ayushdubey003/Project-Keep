@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(@$_SESSION['admin']!="admin")
+    if(!isset($_SESSION['admin']))
         die("You 're not allowed to access this page");
     require '../header.html';
 ?>

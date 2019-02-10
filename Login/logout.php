@@ -1,5 +1,5 @@
 <?php 
     session_start();
-    $_SESSION['professor']=NULL;
-    session_destroy();
+    unset($_SESSION['professor']);
+    header("Location: professor.php");
 ?>

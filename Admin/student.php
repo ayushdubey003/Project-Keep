@@ -1,8 +1,8 @@
 <?php 
     session_start();
-    if(@$_SESSION['admin']!="admin")
+    if(!isset($_SESSION['admin']))
         die("You 're not allowed to access this page");
-    require '../header.html';
+    require '../header1.html';
 ?>
 <html>
     <head>

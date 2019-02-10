@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION["admin"]="somethingelse";
     require ("../header.html");
 ?>
 <html>
@@ -47,28 +46,31 @@
 </html>
 <?php
     @session_start();
-    $_SESSION["admin"]="somethingelse";
-    if(isset($_POST['submit']))
-    {
-        $username=$_POST['username'];
-        $password=$_POST['password'];
-        if(empty($username)||empty($password)){
-            echo "<script type='text/javascript'>
-                alert('Invalid Credentials');
-                </script>";
-            die();
-        }
-        if($username=="admin"&&$password=="1234")
+    if(!isset($_SESSION['admin'])){
+        if(isset($_POST['submit']))
         {
-            $_SESSION["admin"]="admin";
-            $registration="registration.php";
-            header("Location: $registration");
-        }
-        else{
-            echo "<script type='text/javascript'>
-                alert('Invalid Credentials');
-                </script>";
-            die();
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+            if(empty($username)||empty($password)){
+                echo "<script type='text/javascript'>
+                    alert('Invalid Credentials');
+                    </script>";
+                die();
+            }
+            if($username=="admin"&&$password=="1234")
+            {
+                $_SESSION["admin"]="admin";
+                $registration="registration.php";
+                header("Location: $registration");
+            }
+            else{
+                echo "<script type='text/javascript'>
+                    alert('Invalid Credentials');
+                    </script>";
+                die();
+            }
         }
     }
+    else
+        header("Location: registration.php");
 ?>

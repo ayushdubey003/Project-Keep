@@ -1,21 +1,21 @@
 <?php
     session_start();
-    if(@$_SESSION['professor']==NULL)
-        die("You are not allowed to acces this page");
-    include("../header.html");
-    include("../Schema/dbconnect.php");
-    $username=$_SESSION['professor'];
-    $query="SELECT * FROM professor WHERE username='$username'";
-    $result=mysqli_query($conn,$query);
-    $firstname="";
-    $lastname="";
-    while($row=mysqli_fetch_assoc($result)){
-        $firstname=$row['firstname'];
-        $lastname=$row['lastname'];
+    if(isset($_SESSION['professor'])){
+        include("../header.html");
+        include("../Schema/dbconnect.php");
+        $username=$_SESSION['professor'];
+        $query="SELECT * FROM professor WHERE username='$username'";
+        $result=mysqli_query($conn,$query);
+        $firstname="";
+        $lastname="";
+        while($row=mysqli_fetch_assoc($result)){
+            $firstname=$row['firstname'];
+            $lastname=$row['lastname'];
+        }
+        echo '<br><br>
+        <title>Welcome Page</title>
+        <p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'" >Welcome '.$firstname.' '.$lastname.'</p>';
     }
-    echo '<br><br>
-    <title>Welcome Page</title>
-    <p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'" >Welcome '.$firstname.' '.$lastname.'</p>';
 ?>
 <html>
     <style>
