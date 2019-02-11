@@ -5,8 +5,7 @@
     require "../Schema/dbconnect.php";
     $coursecode=$_GET['coursecode'];
     $title=$_GET['title'];
-    $_SESSION['coursecode']=$coursecode;
-    $_SESSION['title']=$title;
+    $_SESSION['uid']=$coursecode.$title;
     $query="SELECT * FROM project WHERE coursecode='$coursecode' AND title='$title'";
     $result=mysqli_query($conn,$query);
     $row=mysqli_fetch_assoc($result);

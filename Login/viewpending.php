@@ -30,8 +30,8 @@
         $res=mysqli_query($conn,$query);
         if(mysqli_num_rows($res)==0)
         {
-            $que="INSERT INTO submission (username,submission,uid)
-                VALUES('$username',NULL,'$projects[$j]')";
+            $que="INSERT INTO submission (username,file,uid)
+                VALUES('$username','nowhere','$projects[$j]')";
             mysqli_query($conn,$que);
         }
     }
