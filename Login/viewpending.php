@@ -1,3 +1,4 @@
+<title>Pending Projects</title>
 <?php
     session_start();
     if(!isset($_SESSION['student']))

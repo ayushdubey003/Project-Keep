@@ -1,3 +1,4 @@
+<title>Submission Page</title>
 <?php 
     session_start();
     $username=$_SESSION['student'];
@@ -17,6 +18,6 @@
     echo "</div>";
 ?>
 <form method="POST" action="upload.php" enctype="multipart/form-data">
-    <input style="margin-left:200px;padding-top: 0.90%" type="file" name="data" accept="application/pdf"/><br>
+    <input style="margin-left:200px;padding-top: 5%" type="file" name="data" accept="application/pdf"/><br>
     <input style="margin-left:200px;margin-top: 1.5%" name="submit" value="Submit" type="submit"/>
 </form>

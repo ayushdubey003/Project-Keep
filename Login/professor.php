@@ -2,7 +2,9 @@
     require "../header.html";
 ?>
 <html>
-    <head></head>
+    <head>
+        <title>Professor Portal</title>
+    </head>
     <body>
     <style>
         .inp
