@@ -10,7 +10,7 @@
     }
     $query="CREATE TABLE submission (username VARCHAR(30) NOT NULL,
     file varchar(100),
-    uid VARCHAR(100),
+    uid VARCHAR(100000000),
     submitted INTEGER DEFAULT 0)";
     mysqli_query($conn,$query);
     mysqli_close($conn);

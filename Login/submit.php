@@ -15,9 +15,9 @@
         echo '<p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'">Course Code  : '.$coursecode.'</p>';
         echo '<p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'">Title  : '.$title.'</p>';
         echo '<p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'">Description  : '.$description.'</p>';
+        echo '<form method="POST" action="upload.php" enctype="multipart/form-data">
+        <input style="margin-left:50px;padding-top: 5%" type="file" name="data" accept="application/pdf"/><br>
+        <input style="margin-left:50px;margin-top: 1.5%" name="submit" value="Submit" type="submit"/>
+        </form>';
     echo "</div>";
 ?>
-<form method="POST" action="upload.php" enctype="multipart/form-data">
-    <input style="margin-left:200px;padding-top: 5%" type="file" name="data" accept="application/pdf"/><br>
-    <input style="margin-left:200px;margin-top: 1.5%" name="submit" value="Submit" type="submit"/>
-</form>
