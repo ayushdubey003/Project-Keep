@@ -9,7 +9,7 @@
         die ("Error connecting to database");
     }
     $query="CREATE TABLE project (username VARCHAR(30) NOT NULL,
-    title VARCHAR(50) NOT NULL,
+    title VARCHAR(10000000) NOT NULL,
     description VARCHAR(1000000000) NOT NULL,
     coursecode VARCHAR(10) NOT NULL,
     deadline INTEGER NOT NULL)";

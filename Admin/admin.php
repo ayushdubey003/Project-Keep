@@ -1,3 +1,4 @@
+<title>Admin Login</title>
 <?php
     session_start();
     require ("../header.html");

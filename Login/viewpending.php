@@ -50,7 +50,12 @@
         while($row=mysqli_fetch_assoc($res))
         {
             $var=$row['uid'];
-            echo '<a href="submit.php?coursecode='.substr($var,0,5).'&amp;title='.substr($var,5).'" style="text-decoration:none;color:black"><p style="text-align:left;padding-bottom:2%%;padding-left:20%;padding-right:10%;font-size:20px;font-family:\'../fonts/Futura_Light_font.ttf\">'.substr($var,0,5).'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.substr($var,5).'</a>';
+            echo '<a href="submit.php?coursecode='.substr($var,0,5).'&amp;title='.substr($var,5).'"
+             style="text-decoration:none;color:black;padding-top:10px;padding-bottom:10px;">
+            <p style="text-align:left;padding-bottom:2%;padding-left:30%;padding-right:10%;font-size:20px;font-family:\'../fonts/Futura_Light_font.ttf\">'
+            .substr($var,0,5).
+            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            .substr($var,5).'</a>';
         }
     }
 ?>
