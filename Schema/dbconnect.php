@@ -1,9 +1,9 @@
 <?php 
     $server="localhost";
     $user="Ayush";
-    $password="abcdefgh";
+    $pass="abcdefgh";
     $dbname="ProjectKeep";
-    $conn=mysqli_connect($server,$user,$password,$dbname);
+    $conn=mysqli_connect($server,$user,$pass,$dbname);
     if(!$conn)
         die ("Error connecting to database");
 ?>

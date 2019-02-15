@@ -32,6 +32,7 @@
         <div class="container" style="height:400px;width:300px;">
             <a href="viewpending.php"><button class="butt">View Pending Projects</button></a>
             <a href="viewsubmitted.php"><button class="butt">View Submitted Projects</button></a>
+            <a href="resetpassword.php"><button class="butt">Reset Password</button></a>
             <a href="logoutStudent.php"><button class="butt">Logout</button></a>
         </div>
     </body>
