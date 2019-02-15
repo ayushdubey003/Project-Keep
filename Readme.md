@@ -7,7 +7,7 @@ Usage:
   Copyright (c) 1997-2017 The PHP Group
   Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.0.30-0ubuntu0.16.04.1, Copyright (c) 1999-   2017, by Zend Technologies.
 * Clone the repository in htdocs folder. In linux the address for copying is /opt/lampp/htdocs/. Copy files as superuser.
-* Next create a folder called uploads in htdocs or wherever you copis the repo. For linux the command is "sudo mkdir uploads"     without the quotes.
+* Next create a folder called uploads in htdocs or wherever you copied the repo. For linux the command is "sudo mkdir uploads"   without the quotes.
 
 Screenshots:
 Home Page:
