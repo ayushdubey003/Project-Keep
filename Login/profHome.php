@@ -32,6 +32,7 @@
         <div class="container" style="height:400px;width:280px;">
             <a href="giveproject.php"><button class="butt">Give Project</button></a>
             <a href="reviewproject.php"><button class="butt">Previous Projects</button></a>
+            <a href="resetprof.php"><button class="butt">Reset Password</button></a>
             <a href="logoutProfessor.php"><button class="butt">Logout</button></a>
         </div>
     </body>

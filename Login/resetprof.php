@@ -1,10 +1,10 @@
 <?php
     session_start();
-    if(!isset($_SESSION['student']))
+    if(!isset($_SESSION['professor']))
     {
         die("You are not allowed to access this page");
     }
-    require "../header3.html";  
+    require "../header2.html";  
 ?>
 <html>
     <head>
@@ -42,7 +42,7 @@
             }
         </style>
         <div class="container" style="height:400px; width:300px;float: centre; margin-top: 100px; background-color:white ">
-            <form action="resetpassword.php" method="POST">
+            <form action="resetprof.php" method="POST">
                 Old Password *: <br> <input type= "password" name="oldpassword" class="inp" ><br>
                 New Password *: <br> <input type= "password" name="newpassword" class="inp"><br>
                 Confirm Password *: <br> <input type= "password" name="confirmpassword" class="inp"><br>
@@ -56,7 +56,7 @@
         $oldpass=$_POST['oldpassword'];
         $newpass=$_POST['newpassword'];
         $confirmpass=$_POST['confirmpassword'];
-        $username=$_SESSION['student'];
+        $username=$_SESSION['professor'];
         if(empty($oldpass)||empty($newpass)||empty($confirmpass))
         {
             echo "<script type='text/javascript'>
@@ -65,7 +65,7 @@
             die();
         }
         require "../Schema/dbconnect.php";
-        $query="SELECT * FROM student WHERE username='$username'";
+        $query="SELECT * FROM professor WHERE username='$username'";
         $result=mysqli_query($conn,$query);
         while($row=mysqli_fetch_assoc($result))
             $old_pass=$row['password'];
@@ -93,10 +93,10 @@
         }
         $enc_password=md5($newpass);
         $old_enc_pass=md5($oldpass);
-        $sql="UPDATE student SET password='$enc_password' WHERE username='$username' AND password='$old_enc_pass'";
+        $sql="UPDATE professor SET password='$enc_password' WHERE username='$username' AND password='$old_enc_pass'";
         if(mysqli_query($conn,$sql))
         {
-            header("Location: logoutStu.php");
+            header("Location: logoutProf.php");
         }
     }
 ?>
