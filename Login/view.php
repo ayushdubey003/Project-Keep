@@ -20,8 +20,17 @@
     {
         $path=$row['file'];
         $name=$row['username'];
+        $query="SELECT * FROM student WHERE username='$name'";
+        $res=mysqli_query($conn,$query);
+        while($ro=mysqli_fetch_assoc($res))
+        {
+            $firstname=$ro['firstname'];
+            $lastname=$ro['lastname'];
+        }
         echo '<a href='.$path.'
-        style="text-decoration:none;color:black;padding-top:10px;padding-bottom:10px;"><p style="padding-left:50px;padding-top:2px; padding-left:30%;font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'" >Submission by '.$name.
-        '</p></a>';
+        style="text-decoration:none;color:black;padding-top:10px;padding-bottom:10px;">
+        <p style="padding-left:50px;padding-top:2px; padding-left:30%;font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'" >
+        Submission by '.$firstname.' '.$lastname.' (Username: '.$name.
+        ')</p></a>';
     }
 ?>
