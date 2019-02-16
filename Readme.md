@@ -8,6 +8,8 @@ Usage:
   Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.0.30-0ubuntu0.16.04.1, Copyright (c) 1999-   2017, by Zend Technologies.
 * Clone the repository in htdocs folder. In linux the address for copying is /opt/lampp/htdocs/. Copy files as superuser.
 * Next create a folder called uploads in htdocs or wherever you copied the repo. For linux the command is "sudo mkdir uploads"   without the quotes.
+* Next start Xampp. For windows just double click and for linux users open terminal and type "sudo /opt/lampp/lampp start"       without the quotes.
+* Next open your browser and in the address bar type "localhost" or "127.0.0.1" without the quotes.
 
 Screenshots:
 Home Page:
