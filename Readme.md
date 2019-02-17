@@ -10,6 +10,7 @@ Usage:
 * Next create a folder called uploads in htdocs or wherever you copied the repo. For linux the command is "sudo mkdir uploads"   without the quotes.
 * Next start Xampp. For windows just double click and for linux users open terminal and type "sudo /opt/lampp/lampp start"       without the quotes.
 * Next open your browser and in the address bar type "localhost" or "127.0.0.1" without the quotes.
+* If in linux some error occurs while connecting to database try to execute the following command in terminal without the         quotes "sudo chmod -R 755 /opt/lampp/phpmyadmin/config.inc.php"
 
 Screenshots:
 Home Page:
