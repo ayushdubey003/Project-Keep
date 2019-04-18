@@ -1,6 +1,39 @@
 <?php
     require "../header7.html";
 ?>
+<?php
+    session_start();
+    unset($_SESSION['professor']);
+    require "../Schema/dbconnect.php";
+    if(!isset($_SESSION['professor'])){
+        if(isset($_POST['submit']))
+        {
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+            if(empty($username)||empty($password)){
+                echo "<script type='text/javascript'>
+                    alert('Invalid Credentials');
+                    </script>";
+            }
+            else{
+                $enc_pass=md5($password);
+                $sql = "SELECT * FROM professor WHERE username='$username' AND password='$enc_pass'";
+                $result = mysqli_query($conn, $sql);
+                if(mysqli_num_rows($result)==0)
+                {
+                    echo "<script type='text/javascript'>
+                        alert('Invalid Credentials');
+                        </script>";
+                }
+                else
+                {
+                    $_SESSION['professor']=$username;
+                    header("Location: profHome.php");
+                }
+            }
+        }
+    }
+?>
 <html>
     <head>
         <title>Professor Portal</title>
@@ -75,38 +108,3 @@
         </div>
     </body>
 </html>
-<?php
-    session_start();
-    unset($_SESSION['professor']);
-    require "../Schema/dbconnect.php";
-    if(!isset($_SESSION['professor'])){
-        if(isset($_POST['submit']))
-        {
-            $username=$_POST['username'];
-            $password=$_POST['password'];
-            if(empty($username)||empty($password)){
-                echo "<script type='text/javascript'>
-                    alert('Invalid Credentials');
-                    </script>";
-                die();
-            }
-            else{
-                $enc_pass=md5($password);
-                $sql = "SELECT * FROM professor WHERE username='$username' AND password='$enc_pass'";
-                $result = mysqli_query($conn, $sql);
-                if(mysqli_num_rows($result)==0)
-                {
-                    echo "<script type='text/javascript'>
-                        alert('Invalid Credentials');
-                        </script>";
-                    die();
-                }
-                else
-                {
-                    $_SESSION['professor']=$username;
-                    header("Location: profHome.php");
-                }
-            }
-        }
-    }
-?>

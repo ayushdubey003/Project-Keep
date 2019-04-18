@@ -15,7 +15,7 @@
         }
         echo '<br><br>
         <title>Welcome Page</title>
-        <p style="padding-left:50px; font-size: 20px; font-family:\'../fonts/Futura_Light_font.ttf\'" >Welcome '.$firstname.' '.$lastname.'</p>';
+        <p style="padding-left:50px; font-size: 30px; font-family:\'../fonts/Futura_Light_font.ttf\'; padding-top:75px;color:white" >Welcome '.$firstname.' '.$lastname.'</p>';
     }
     else
         die("You are not allowed to access this page");

@@ -1,0 +1,20 @@
+{
+    "telemetry.machineId": "64d2bf7e2f04ac0c698fe624fea3a1ba51e07a923002997cee1554b9e868f2ed",
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "pickerWorkingDir": "/opt/lampp/htdocs/DBMS",
+    "openedPathsList": {
+        "workspaces2": [],
+        "files2": [
+            "file:///opt/lampp/htdocs/DBMS/index.php",
+            "file:///opt/lampp/htdocs/DBMS/vendor/bootstrap/css/bootstrap.css",
+            "file:///opt/lampp/htdocs/DBMS/vendor/bootstrap/js/bootstrap.bundle.js",
+            "file:///opt/lampp/htdocs/DBMS/vendor/bootstrap/js/bootstrap.js",
+            "file:///home/ayush/Timer/timer.html",
+            "file:///opt/lampp/htdocs/DBMS/css/full-width-pics.css",
+            "file:///opt/lampp/htdocs/DBMS/index.html",
+            "file:///opt/lampp/htdocs/DBMS/css/style.css",
+            "file:///opt/lampp/htdocs/DBMS/css/bootstrap.css"
+        ]
+    }
+}

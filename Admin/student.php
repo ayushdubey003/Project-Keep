@@ -128,7 +128,11 @@
         $text="Dear User,\nYour username is $username and password is $password. Please use it to Login in the future";
         $headers="From: ayushdubey957@gmx.com";
         if(mail($username,$subject,$text,$headers)){
-            //do nothing
+             //do nothing
+            $sql="INSERT INTO student (username,password,firstname,lastname)
+            VALUES('$username','$encpassword','$firstname','$lastname')";
+            mysqli_query($conn, $sql);
+            header("Location: registration.php");
         }
         else
         {
@@ -137,9 +141,5 @@
             </script>";
             die();
         }
-        $sql="INSERT INTO student (username,password,firstname,lastname)
-        VALUES('$username','$encpassword','$firstname','$lastname')";
-        mysqli_query($conn, $sql);
-        header("Location: registration.php");
     }
 ?>

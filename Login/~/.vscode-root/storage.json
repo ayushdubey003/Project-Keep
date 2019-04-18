@@ -1,0 +1,15 @@
+{
+    "telemetry.machineId": "64d2bf7e2f04ac0c698fe624fea3a1ba51e07a923002997cee1554b9e868f2ed",
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "pickerWorkingDir": "/opt/lampp/htdocs",
+    "openedPathsList": {
+        "workspaces2": [
+            "file:///opt/lampp/htdocs/DBMS"
+        ],
+        "files2": [
+            "file:///opt/lampp/htdocs/DBMS/index.php",
+            "file:///opt/lampp/htdocs/DBMS/header.html"
+        ]
+    }
+}

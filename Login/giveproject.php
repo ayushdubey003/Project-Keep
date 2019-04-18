@@ -3,8 +3,66 @@
     session_start();
     if(!isset($_SESSION['professor']))
         die("You're not allowed to access this page");
-    require("../header2.html");
 ?>
+<?php
+    require "../Schema/dbconnect.php";
+    if(isset($_POST['submit']))
+    {
+        $title=$_POST['title'];
+        $description=$_POST['description'];
+        $deadline=$_POST['deadline'];
+        if(empty($title)||empty($description)||empty($deadline)){
+            echo "<script type=text/javascript>
+                alert('All Fields are compulsary');
+            </script>";
+            die();
+        }
+        $ts=strtotime($deadline);
+        $ts=$ts-270*60-1;
+        $ts=$ts+86400;
+        if($ts<time())
+        {
+            echo "<script type=text/javascript>
+                alert('Deadline time cannot be less than current time');
+            </script>";
+            die();
+        }
+        $username=$_SESSION['professor'];
+        $sql="SELECT coursecode FROM professor WHERE username='$username'";
+        $result = mysqli_query($conn, $sql);
+        $row=mysqli_fetch_assoc($result);
+        $coursecode=$row['coursecode'];
+        $query="INSERT INTO project (username,title,description,coursecode,deadline)
+            VALUES('$username','$title','$description','$coursecode','$ts')";
+        $uid=$coursecode+$title;
+        if(mysqli_query($conn,$query))
+            header("Location: profHome.php");
+        else
+            echo "<script type=text/javascript>
+            Error connecting to database    
+            </script>";
+    }
+?>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <img class="img-fluid d-block mx-auto logo" src="../images/logo.jpg" alt="" style="height:50px;width:50px;">
+                <a class="navbar-brand brand-name" href="" style="padding-left:20px;" id="title"><?php echo " Project Keep - Give Project" ;?></a>
+                <a class="navbar-brand" href="profHome.php" style="padding-left:60% ">Home</a>
+                <a class="navbar-brand" href="logoutProfessor.php" style="padding-left:20px;">Logout</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                </div>
+            </div>
+        </nav>
+        <!--<header class="py-5 bg-image-full" id="setBackground">
+            <img class="img-fluid d-block mx-auto" src="../images/logo.png" alt="" style="height:100px;width:90px;padding-top: 0px;margin-top: 0px">  
+        </header>
+    --><script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
 <style>
     .customform{
         border: 2px solid white;
@@ -83,42 +141,17 @@
         <input type="submit" name="submit" value="Submit" class="submit" style="margin-left:38%;"></p>
     </form>
 </div>
-<?php
-    require "../Schema/dbconnect.php";
-    if(isset($_POST['submit']))
-    {
-        $title=$_POST['title'];
-        $description=$_POST['description'];
-        $deadline=$_POST['deadline'];
-        if(empty($title)||empty($description)||empty($deadline)){
-            echo "<script type=text/javascript>
-                alert('All Fields are compulsary');
-            </script>";
-            die();
-        }
-        $ts=strtotime($deadline);
-        $ts=$ts-270*60-1;
-        $ts=$ts+86400;
-        if($ts<time())
-        {
-            echo "<script type=text/javascript>
-                alert('Deadline time cannot be less than current time');
-            </script>";
-            die();
-        }
-        $username=$_SESSION['professor'];
-        $sql="SELECT coursecode FROM professor WHERE username='$username'";
-        $result = mysqli_query($conn, $sql);
-        $row=mysqli_fetch_assoc($result);
-        $coursecode=$row['coursecode'];
-        $query="INSERT INTO project (username,title,description,coursecode,deadline)
-            VALUES('$username','$title','$description','$coursecode','$ts')";
-        $uid=$coursecode+$title;
-        if(mysqli_query($conn,$query))
-            header("Location: profHome.php");
-        else
-            echo "<script type=text/javascript>
-            Error connecting to database    
-            </script>";
-    }
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/full-width-pics.css" rel="stylesheet">
+        <link href="../css/custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+    </head>
+    <style>
+            .logo{
+                border: 0px solid white;
+                border-radius: 25px;
+            }
+    </style>
