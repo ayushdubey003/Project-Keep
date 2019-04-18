@@ -5,17 +5,16 @@
     width :100%;
 }
 .butt{
-    margin-left: 40%;
     background-color: #4CAF50;
     color:white;
     text-align: center;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 0px 10px 0px;
     font-size: 24px;
     border: none;
     border-radius: 12px;
     font-family:"../fonts/Futura_Light_font.ttf";
 }
-.butt:hover {background-color: #3e8e41}
+.butt:hover {background-color:  #37a90b }
 .butt:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;

@@ -12,6 +12,29 @@
     </head>
     <body>
         <style>
+                .customform{
+                border: 2px solid white;
+                border-radius: 6px;
+                padding:35px 30px 15px 30px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+            }
+            body{
+                background-image: url("../images/back.jpg");
+                background-color: black;
+                padding: 60px 0px 80px 0px;
+            }
+            .brand-name{
+                font-weight:bold;
+            }
+            a, p{
+                font-family:"../fonts/Futura_Light_font.ttf";
+                font-size:18px;
+                color:#6b6b6b;
+            }
+            .b{
+                font-size:19px;
+                color: #8c8e8c ;
+            }
             .inp
             {
                 width:100%;
@@ -26,30 +49,40 @@
             {
                 border-radius:2px;
                 margin-left: 34%;
-                background-color: #4CAF50;
+                background-color:#3cbd0c;
                 color:white;
+                font-size:18px;
+                font-weight:bold;
                 text-align: center;
                 padding: 10px 20px 10px 20px;
                 font-size: 15px;
                 border: none;
                 font-family:"../fonts/Futura_Light_font.ttf";
             }
-            .submit:hover {background-color: #3e8e41}
+            .submit:hover {background-color: #37a90b;}
             .submit:active {
                 background-color: #3e8e41;
                 box-shadow: 0 5px #666;
                 transform: translateY(4px);
             }
+            .dropdown{
+                width:270px;
+                height:40px;
+            }
         </style>
-        <div class="container" style="height:400px; width:300px;float: centre; margin-top: 100px; background-color:white ">
+        <div class="container customform" style="height:640px; width:420px;float: centre; margin-top: 100px; background-color:white ">
+            <img class="img-fluid d-block mx-auto" src="../images/logo.jpg" alt="" style="height:100px;width:100px;">  
             <form action="resetprof.php" method="POST">
-                Old Password *: <br> <input type= "password" name="oldpassword" class="inp" ><br>
-                New Password *: <br> <input type= "password" name="newpassword" class="inp"><br>
-                Confirm Password *: <br> <input type= "password" name="confirmpassword" class="inp"><br>
-                <input type="submit" value="Submit" name="sub" align:centre class="submit">
-            </form>
+                <p>Old Password *: <br> <input type= "password" name="oldpassword" class="inp" ><br><br><br>
+                New Password *: <br> <input type= "password" name="newpassword" class="inp"><br><br><br>
+                Confirm Password *: <br> <input type= "password" name="confirmpassword" class="inp"><br><br><br>
+                <input type="submit" value="Submit" name="sub" align:centre class="submit"><br><br>
+            </p></form>
         </div>
     </body>
+    <script>
+        document.getElementById("title").innerHTML = "Project Keep - Reset Password"
+    </script>
 </html>
 <?php
     if(isset($_POST['sub'])){

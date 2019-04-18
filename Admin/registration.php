@@ -17,12 +17,72 @@
         <link href="../css/custom.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
     </head>
+    <style>
+        .column1 {
+            float: left;
+            width: 55%;
+        }
+        .column2 {
+            float: left;
+            width: 45%;
+            margin: 18% 0px 0% 0px;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .big{
+            font-family:"../fonts/Futura_Light_font.ttf";
+            font-weight:bold;
+            font-size:72px;
+            color:white;
+            margin:50px 0px 0px 110px;
+        }
+        .medium{
+            font-family:"../fonts/Futura_Light_font.ttf";
+            font-size:32px;
+            color:white;
+            margin:50px 0px 0px 110px;
+        }
+        body{
+            background-image: url("../images/back.jpg");
+            background-color: black;
+            padding: 20px 0px 0px 0px;
+        }
+        a, p{
+            font-family:"../fonts/Futura_Light_font.ttf";
+            font-size:18px;
+            font-weight:bold;
+            color:#6b6b6b;
+        }
+        .butt{
+            margin-left:20%;
+            font-size:24px;
+            font-family:"../fonts/Futura_Light_font.ttf";
+            width:320px;
+            border-radius:3px;
+            background: #3cbd0c;
+            font-weight: bold;
+        }
+    </style>
     <body>
-        <section class="py-5">
-        <div class="container">
-            <a href="student.php"><button class="butt">Register a Student&nbsp;&nbsp;&nbsp</button></a><br><br>
-            <a href="professor.php"><button class="butt">Register a Professor</button></a><br><br>
-            <a href="logout.php"><button class="butt">Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a><br><br>
+        <div class="row">
+            <div class="column1">
+                <section class="py-5">
+                <div class="container">
+                    <p class="big">Hello Administrator,<p>
+                    <p class="medium">Welcome to the Keep. Keep was created by an ambitious little bastard by the name of Ayush Dubey. He wanted to create a portal for submission of assignments for his batch. So that's what he did. Here in the Keep, you can register a new professor for the batch, or enroll a new student. Keep was created to have fun. Enjoy!</p>
+                    <br>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="container">
+                    <a href="student.php"><button class="butt">Register a Student&nbsp;&nbsp;&nbsp</button></a><br><br><br>
+                    <a href="professor.php"><button class="butt">Register a Professor</button></a><br><br><br>
+                    <a href="logout.php"><button class="butt">Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a><br><br>
+                </div>
+            </div>
         </div>
   </section>
     </body>
