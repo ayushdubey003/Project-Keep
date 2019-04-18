@@ -6,10 +6,17 @@
         <link href="../css/custom.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
     </head>
+    <style>
+        .logo{
+            border: 0px solid white;
+            border-radius: 25px;
+        }
+    </style>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="http://nitjsr.ac.in"><?php echo " राष्ट्रीय प्रौद्योगिकी संस्थान ,जमशेदपुर" ;?></a>
+            <div class="container" style="padding:5px 15px 5px 15px;">
+                <img class="img-fluid d-block mx-auto logo" src="../images/logo.jpg" alt="" style="height:50px;width:50px;">
+                <a class="navbar-brand brand-name" href="" style="padding-left:20px;"><?php echo "Project Keep" ;?></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -17,10 +24,10 @@
                 </div>
             </div>
         </nav>
-        <header class="py-5 bg-image-full" id="setBackground">
+        <!--<header class="py-5 bg-image-full" id="setBackground">
             <img class="img-fluid d-block mx-auto" src="../images/logo.png" alt="" style="height:100px;width:90px;padding-top: 0px;margin-top: 0px">  
         </header>
-        <script src="vendor/jquery/jquery.min.js"></script>
+    --><script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

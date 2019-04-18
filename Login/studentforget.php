@@ -7,6 +7,27 @@
     </head>
     <body>
         <style>
+            .customform{
+                border: 2px solid white;
+                border-radius: 6px;
+                padding:35px 25px 15px 25px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+            }
+            body{
+                
+            }
+            .brand-name{
+                font-weight:bold;
+            }
+            a, p{
+                font-family:"../fonts/Futura_Light_font.ttf";
+                font-size:18px;
+                color:#6b6b6b;
+            }
+            .b{
+                font-size:19px;
+                color: #8c8e8c ;
+            }
             .inp
             {
                 width:100%;
@@ -21,27 +42,33 @@
             {
                 border-radius:2px;
                 margin-left: 34%;
-                background-color: #4CAF50;
+                background-color:#3cbd0c;
                 color:white;
+                font-size:18px;
+                font-weight:bold;
                 text-align: center;
                 padding: 10px 20px 10px 20px;
                 font-size: 15px;
                 border: none;
                 font-family:"../fonts/Futura_Light_font.ttf";
             }
-            .submit:hover {background-color: #3e8e41}
+            .submit:hover {background-color: #37a90b;}
             .submit:active {
                 background-color: #3e8e41;
                 box-shadow: 0 5px #666;
                 transform: translateY(4px);
             }
+            .dropdown{
+                width:270px;
+                height:40px;
+            }
         </style>
         <div class="container" style="height:400px;width:300px;padding-top:10%">
             <form action="studentforget.php" method="POST">
-                Username:<br><input type="email" name="username" style="width:100%" class="inp">
-                <br>
+                <br><p>Username:<br><input type="email" style="margin-top:20px;" name="username" style="width:100%" class="inp">
+                <br><br>
                 <input type="submit" name="submit" value="Submit" class="submit">
-            </form>
+            </p></form>
         </div>
     </body>
 </html>
