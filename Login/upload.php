@@ -29,7 +29,7 @@
             $query="UPDATE submission SET file='$path' WHERE username='$username' AND uid='$uid'";
             $result=mysqli_query($conn,$query);
             echo '<div class="container" style="height:100% ;width:100%">
-                <p style="text-align:center;padding:10%;font-size:30px;font-family:\'../fonts/Futura_Light_font.ttf\'">File uploaded succesfully....Plz do not reload this page..</p>
+                <p style="text-align:center;padding:10%;font-size:30px;font-family:\'../fonts/Futura_Light_font.ttf\'"><script>alert("File uploaded succesfully...");window.location.href="studHome.php"</script></p>
             </div> ';
         }
     }

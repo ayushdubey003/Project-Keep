@@ -20,11 +20,12 @@
     <style>
         .column1 {
             float: left;
-            width: 55%;
+            width: 50%;
+            margin-top:8%;
         }
         .column2 {
             float: left;
-            width: 45%;
+            width: 50%;
             margin: 18% 0px 0% 0px;
         }
         .row:after {
@@ -35,7 +36,7 @@
         .big{
             font-family:"../fonts/Futura_Light_font.ttf";
             font-weight:bold;
-            font-size:72px;
+            font-size:78px;
             color:white;
             margin:50px 0px 0px 110px;
         }
@@ -71,9 +72,8 @@
             <div class="column1">
                 <section class="py-5">
                 <div class="container">
-                    <p class="big">Hello Administrator,<p>
-                    <p class="medium">Welcome to the Keep. Keep was created by an ambitious little bastard by the name of Ayush Dubey. He wanted to create a portal for submission of assignments for his batch. So that's what he did. Here in the Keep, you can register a new professor for the batch, or enroll a new student. Keep was created to have fun. Enjoy!</p>
-                    <br>
+                    <p class="big">Hello there, Administrator.<p>
+                    
                 </div>
             </div>
             <div class="column2">

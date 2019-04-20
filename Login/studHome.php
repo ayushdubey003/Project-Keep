@@ -6,6 +6,7 @@
         include("../Schema/dbconnect.php");
         $username=$_SESSION['student'];
         $query="SELECT * FROM student WHERE username='$username'";
+        
         $result=mysqli_query($conn,$query);
         $firstname="";
         $lastname="";
@@ -13,10 +14,10 @@
             $firstname=$row['firstname'];
             $lastname=$row['lastname'];
         }
-        echo '<br><br>
+        /*echo '<br><br>
         <title>Welcome Page</title>
-        <p style="padding-left:50px; font-size: 30px; font-family:\'../fonts/Futura_Light_font.ttf\'; padding-top:75px;color:white" >Welcome '.$firstname.' '.$lastname.'</p>';
-    }
+        <p id = "greeting"; style="padding-left:50px; font-size: 30px; font-family:\'../fonts/Futura_Light_font.ttf\'; padding-top:75px;color:white" >Welcome '.$firstname.' '.$lastname.'</p>';
+    */}
     else
         die("You are not allowed to access this page");
 ?>
@@ -26,10 +27,13 @@
             float: left;
             width: 55%;
         }
-        .column2 {
+        #greeting{
+            margin: 0% 0px 0% 60px;
+        }
+        .column2  {
             float: left;
             width: 45%;
-            margin: 22% 0px 0% 0px;
+            margin: 12% 0px 0% 0px;
         }
         .row:after {
             content: "";
@@ -44,13 +48,14 @@
             margin:50px 0px 0px 110px;
         }
         .medium{
-            font-size:32px;
+            font-size:38px;
             color:white;
             margin:50px 0px 0px 110px;
         }
         body{
             background-image: url("../images/back.jpg");
             background-color: black;
+            background-position: centre centre;
             padding: 20px 0px 0px 0px;
         }
         a, p{
@@ -73,9 +78,10 @@
         <div class="row">
                 <div class="column1">
                         <section class="py-5">
-                        <div class="container">
-                            <p class="big">Hey there, Engineer<p>
-                            <p class="medium">Welcome to the Keep. Keep was created by an ambitious little bastard by the name of Ayush Dubey. He wanted to create a portal for submission of assignments for his batch. So that's what he did. With Keep, you can view your pending assignments, or review the past projects you have submitted. Keep was created to have fun. Enjoy!</p>
+                        <div class="container"><br><br>
+                            <p class="big">Hey there, <?php echo $firstname?><p>
+                            <p class="medium" id="gre">Whats on your mind today?
+                            Look in the Keep if you have any more pending assignemensts.</p>
                             <br>
                         </div>
                 </div>
@@ -88,3 +94,15 @@
         </div>
     </body>
 </html>
+
+<?php
+    include("../Schema/dbconnect.php");
+    $countsub=(mysqli_fetch_assoc(mysqli_query($conn,"SELECT count(username) FROM submission WHERE username='$username' AND submitted=1")));
+    $countproj=(mysqli_fetch_assoc(mysqli_query($conn,"SELECT count(username) FROM project")));
+    $a = $countproj['count(username)'];
+    $b = $countsub['count(username)'];
+    //echo $a;
+    //echo $b;
+
+    echo '<script>if('.$b.'<'.$a.'){document.getElementById("gre").innerHTML="Whats on your mind today? Look in the Keep.We think you have some more pending assignemensts.";}else{document.getElementById("gre").innerHTML="Yipeee! You have no more pending assignments. Just relax and have a nice day .";}</script>';
+?>

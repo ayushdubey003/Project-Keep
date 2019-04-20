@@ -13,10 +13,10 @@
             $firstname=$row['firstname'];
             $lastname=$row['lastname'];
         }
-        echo '<br><br>
+        /*echo '<br><br>
         <title>Welcome Page</title>
         <p style="padding-left:50px; font-size: 30px; font-family:\'../fonts/Futura_Light_font.ttf\'; padding-top:75px;color:white" >Welcome '.$firstname.' '.$lastname.'</p>';
-    }
+    */}
     else
         die("You are not allowed to access this page");
 ?>
@@ -25,11 +25,12 @@
         .column1 {
             float: left;
             width: 55%;
+            margin-top:4%;
         }
         .column2 {
             float: left;
             width: 45%;
-            margin: 18% 0px 0% 0px;
+            margin: 12% 0px 0% 0px;
         }
         .row:after {
             content: "";
@@ -44,7 +45,7 @@
             margin:50px 0px 0px 110px;
         }
         .medium{
-            font-size:32px;
+            font-size:38px;
             color:white;
             margin:50px 0px 0px 110px;
         }
@@ -74,8 +75,8 @@
             <div class="column1">
                 <section class="py-5">
                 <div class="container">
-                    <p class="big">Hello Professor,<p>
-                    <p class="medium">Welcome to the Keep. Keep was created by an ambitious little bastard by the name of Ayush Dubey. He wanted to create a portal for submission of assignments for his batch. So that's what he did. With Keep, you can create a new project for your students, or review the past projects you created. Keep was created to have fun. Enjoy!</p>
+                    <p class="big">Hello, <?php echo $firstname ?><p>
+                    <p class="medium">Welcome to the Keep, Professor. Do you have a new assignment in mind? Create it right here for the joy of your students.</p>
                     <br>
                 </div>
             </div>
