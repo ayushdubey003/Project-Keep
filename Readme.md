@@ -14,13 +14,13 @@ Usage:
 
 Screenshots:
 Home Page:
-![screenshot from 2019-02-15 15-36-03](https://user-images.githubusercontent.com/41465918/52849672-97211200-3137-11e9-8909-f966d92b0987.png)
+![home](https://user-images.githubusercontent.com/41465918/56453683-abfe6980-6363-11e9-855f-1733ac68da3f.png)
 Admin Home Page:
-![admin](https://user-images.githubusercontent.com/41465918/52849750-c9cb0a80-3137-11e9-9f15-eb495c1f901b.png)
+![admin](https://user-images.githubusercontent.com/41465918/56453681-9ab55d00-6363-11e9-9cab-ec4b9706096a.png)
 Student Home Page:
-![studhome](https://user-images.githubusercontent.com/41465918/52849819-f67f2200-3137-11e9-8a00-b694307eaec0.png)
+![studnet home](https://user-images.githubusercontent.com/41465918/56453685-be78a300-6363-11e9-98da-e89d4ab4083c.png)
 Professor Home Page:
-![prof](https://user-images.githubusercontent.com/41465918/52849880-1c0c2b80-3138-11e9-8d4b-50f861e8785f.png)
+![Professor](https://user-images.githubusercontent.com/41465918/56453690-d819ea80-6363-11e9-92bb-872d11b1a209.png)
 
 PS:
 Rest is for you to find...
